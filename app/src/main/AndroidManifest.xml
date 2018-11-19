@@ -12,7 +12,7 @@
         <activity
             android:name=".MainActivity"
             android:label="ZaKuy"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashTheme">
@@ -22,7 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ZakatProfesi" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity
+            android:name=".ZakatProfesi"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".ZakatTernak" />
+        <activity android:name=".ZakatPerdagangan"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            ></activity>
     </application>
 
 </manifest>

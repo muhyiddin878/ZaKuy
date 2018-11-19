@@ -6,10 +6,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class ZakatProfesi extends AppCompatActivity {
 
     Button button1;
+    Button buttonreset;
+    EditText pendapatan;
+    EditText hutang;
+    EditText hargaberas;
+    TextView nisab;
+    TextView nilai;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,29 +25,53 @@ public class ZakatProfesi extends AppCompatActivity {
         setContentView(R.layout.activity_zakat_profesi);
 
         button1=(Button) findViewById(R.id.button1);
+        buttonreset=(Button) findViewById(R.id.buttonreset);
+        pendapatan=(EditText) findViewById(R.id.pendapatan);
+        hutang=(EditText) findViewById(R.id.hutang);
+        hargaberas=(EditText) findViewById(R.id.hargaberas);
+        nisab=(TextView) findViewById(R.id.hasilnisab);
+        nilai=(TextView) findViewById(R.id.hasilnilai);
+
+
 
 
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+            double a= Integer.parseInt(pendapatan.getText().toString());
+            double b= Integer.parseInt(hutang.getText().toString());
+            double c= Integer.parseInt(hargaberas.getText().toString());
 
-                AlertDialog.Builder dialog = new AlertDialog.Builder(ZakatProfesi.this);
-                dialog.setCancelable(true);
-                dialog.setIcon(R.drawable.loopicon);
-                    dialog.setMessage("Halo");
-                    dialog.setTitle("Besar Zakat Profesi Anda Adalah:");
 
-                dialog.setNegativeButton("TUTUP ", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
+            double hnishab=653*c;
+            nisab.setText(""+hnishab);
 
-                final AlertDialog alert = dialog.create();
-                alert.show();
 
+            if(hnishab> a){
+
+                nilai.setText("Anda Tidak Wajib Berzakat");
+            }
+            else{
+
+                double hnilai=a-(b*2.5/100);
+                nilai.setText(""+hnilai);
+
+            }
+
+
+            }
+        });
+
+
+        buttonreset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pendapatan.setText("");
+                hutang.setText("");
+                hargaberas.setText("");
+                nisab.setText("");
+                nilai.setText("");
             }
         });
     }

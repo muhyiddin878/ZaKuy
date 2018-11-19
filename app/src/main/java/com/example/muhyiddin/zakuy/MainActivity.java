@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CardView card1;
     CardView card2;
 
-    int[] sampleImages = {R.drawable.bg2, R.drawable.bg_zakat, R.drawable.logo};
+    int[] sampleImages = {R.drawable.hadist1, R.drawable.hadist2, R.drawable.hadist3};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +72,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.card_view2:
                 Intent intent2 = new Intent(MainActivity.this, ZakatProfesi.class);
                 startActivity(intent2);
+            case R.id.card_view4:
+                Intent intent3 = new Intent(MainActivity.this, ZakatPerdagangan.class);
+                startActivity(intent3);
         }
     }
 }

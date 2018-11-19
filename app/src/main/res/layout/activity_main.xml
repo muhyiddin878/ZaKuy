@@ -45,7 +45,8 @@
                 android:layout_width="wrap_content"
                 android:adjustViewBounds="true"
                 android:layout_height="wrap_content"
-                android:src="@drawable/zakat_profesi"/>
+                android:src="@drawable/logoprofesi"
+                android:background="@android:color/white"/>
 
 
         </android.support.v7.widget.CardView>
@@ -65,7 +66,8 @@
                 android:layout_width="wrap_content"
                 android:adjustViewBounds="true"
                 android:layout_height="wrap_content"
-                android:src="@drawable/zakat_profesi"/>
+                android:src="@drawable/logobinatang"
+                android:background="@android:color/white"/>
 
 
         </android.support.v7.widget.CardView>
@@ -86,7 +88,8 @@
                 android:layout_width="wrap_content"
                 android:adjustViewBounds="true"
                 android:layout_height="wrap_content"
-                android:src="@drawable/zakat_profesi"/>
+                android:src="@drawable/logoperdagangan"
+                android:background="@android:color/white"/>
 
 
         </android.support.v7.widget.CardView>
@@ -108,7 +111,8 @@
                 android:layout_width="wrap_content"
                 android:adjustViewBounds="true"
                 android:layout_height="wrap_content"
-                android:src="@drawable/zakat_profesi"/>
+                android:src="@drawable/logotemuan"
+                android:background="@android:color/white"/>
 
 
         </android.support.v7.widget.CardView>
@@ -129,7 +133,8 @@
                 android:layout_width="wrap_content"
                 android:adjustViewBounds="true"
                 android:layout_height="wrap_content"
-                android:src="@drawable/zakat_profesi"/>
+                android:src="@drawable/logopertanian"
+                android:background="@android:color/white"/>
 
 
         </android.support.v7.widget.CardView>
@@ -151,7 +156,8 @@
                 android:layout_width="wrap_content"
                 android:adjustViewBounds="true"
                 android:layout_height="wrap_content"
-                android:src="@drawable/zakat_profesi"/>
+                android:src="@drawable/logoemas"
+                android:background="@android:color/white"/>
 
 
         </android.support.v7.widget.CardView>
