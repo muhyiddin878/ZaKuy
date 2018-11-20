@@ -4,10 +4,12 @@ import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ZakatProfesi extends AppCompatActivity {
 
@@ -18,6 +20,14 @@ public class ZakatProfesi extends AppCompatActivity {
     EditText hargaberas;
     TextView nisab;
     TextView nilai;
+    boolean cek=true;
+
+    @Override
+    public void onBackPressed() {
+
+        super.onBackPressed();
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,25 +49,31 @@ public class ZakatProfesi extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            double a= Integer.parseInt(pendapatan.getText().toString());
-            double b= Integer.parseInt(hutang.getText().toString());
-            double c= Integer.parseInt(hargaberas.getText().toString());
+                if(TextUtils.isEmpty(pendapatan.getText()) || TextUtils.isEmpty(hutang.getText()) || TextUtils.isEmpty(hargaberas.getText())){
+                    Toast.makeText(ZakatProfesi.this, "Data Harus Lengkap!", Toast.LENGTH_SHORT).show();
+                }else{
+                    double a= Integer.parseInt(pendapatan.getText().toString());
+                    double b= Integer.parseInt(hutang.getText().toString());
+                    double c= Integer.parseInt(hargaberas.getText().toString());
 
 
-            double hnishab=653*c;
-            nisab.setText(""+hnishab);
+
+                    double hnishab=653*c;
+                    nisab.setText(""+hnishab);
 
 
-            if(hnishab> a){
+                    if(hnishab> a){
 
-                nilai.setText("Anda Tidak Wajib Berzakat");
-            }
-            else{
+                        nilai.setText("Anda Tidak Wajib Berzakat");
+                    }
+                    else{
 
-                double hnilai=a-(b*2.5/100);
-                nilai.setText(""+hnilai);
+                        double hnilai=a-(b*2.5/100);
+                        nilai.setText(""+hnilai);
 
-            }
+                    }
+                }
+
 
 
             }
@@ -74,5 +90,6 @@ public class ZakatProfesi extends AppCompatActivity {
                 nilai.setText("");
             }
         });
+
     }
 }

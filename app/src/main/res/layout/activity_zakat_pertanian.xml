@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/gradient_bg_2"
+    android:background="@drawable/gradient_bg_6"
     tools:context=".ZakatProfesi"
     android:padding="16dp">
 
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="Hitung Zakat Hewan Ternak"
+            android:text="Hitung Zakat Pertanian"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -37,33 +37,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="Jenis Hewan"
+            android:text="Jenis Pengairan"
             android:textColor="@color/green"
             android:textSize="14sp" />
 
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:prompt="@string/jenispengairan"
 
 
-            >
+                >
 
-        </Spinner>
+            </Spinner>
 
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Jumlah Hewan"
+            android:hint="Jumlah Keuntungan"
             android:textColorHint="@color/green"
             app:hintAnimationEnabled="true"
             app:hintEnabled="true">
 
 
             <android.support.design.widget.TextInputEditText
-                android:id="@+id/jumlahhewan"
+                android:id="@+id/keuntungan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -72,7 +73,25 @@
 
         </android.support.design.widget.TextInputLayout>
 
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Hasil Tani (KG)"
+            android:textColorHint="@color/green"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true">
 
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/hasiltani"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@color/red"
+                android:textSize="13dp" />
+
+        </android.support.design.widget.TextInputLayout>
 
 
 
@@ -114,7 +133,7 @@
                 android:id="@+id/nilai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Jumlah Zakat   : "
+                android:text="Nominal Zakat   : "
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"/>

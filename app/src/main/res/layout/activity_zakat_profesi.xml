@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="Hitung Zakat profesi"
+            android:text="Hitung Zakat Profesi"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -128,7 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/nisab"
-                android:text="Nishab     : "
+                android:text="Nishab                 : "
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"/>
@@ -150,7 +150,7 @@
                 android:id="@+id/nilai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nominal   : "
+                android:text="Nominal Zakat   : "
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"/>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/gradient_bg_2"
+    android:background="@drawable/gradient_bg_5"
     tools:context=".ZakatProfesi"
     android:padding="16dp">
 
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="Hitung Zakat Hewan Ternak"
+            android:text="Hitung Zakat Emas dan Perak"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="Jenis Hewan"
+            android:text="Jenis"
             android:textColor="@color/green"
             android:textSize="14sp" />
 
@@ -52,18 +52,39 @@
         </Spinner>
 
 
+
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Jumlah Hewan"
+            android:hint="Harga Jual/gram"
             android:textColorHint="@color/green"
             app:hintAnimationEnabled="true"
             app:hintEnabled="true">
 
 
             <android.support.design.widget.TextInputEditText
-                android:id="@+id/jumlahhewan"
+                android:id="@+id/hargajual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@color/green"
+                android:textSize="13dp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="Jumlah Emas/Perak yang dimiliki(Gram)"
+            android:textColorHint="@color/green"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true">
+
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/jumlahemasperak"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -71,8 +92,6 @@
                 android:textSize="13dp" />
 
         </android.support.design.widget.TextInputLayout>
-
-
 
 
 
@@ -114,7 +133,7 @@
                 android:id="@+id/nilai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Jumlah Zakat   : "
+                android:text="Nominal Zakat   : "
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"/>

@@ -2,10 +2,12 @@ package com.example.muhyiddin.zakuy;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ZakatPerdagangan extends AppCompatActivity {
 
@@ -15,6 +17,13 @@ public class ZakatPerdagangan extends AppCompatActivity {
     EditText hutangdagang;
     EditText lababersih;
     TextView nilaizakat;
+
+    @Override
+    public void onBackPressed() {
+
+        super.onBackPressed();
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +46,20 @@ public class ZakatPerdagangan extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                double a= Integer.parseInt(totalnilai.getText().toString());
-                double b= Integer.parseInt(hutangdagang.getText().toString());
-                double c= Integer.parseInt(lababersih.getText().toString());
 
 
-                double hnilai=(a-b+c)*2.5/100;
-                nilaizakat.setText(""+hnilai);
+                if(TextUtils.isEmpty(totalnilai.getText()) || TextUtils.isEmpty(hutangdagang.getText()) || TextUtils.isEmpty(lababersih.getText())){
+                    Toast.makeText(ZakatPerdagangan.this, "Data Harus Lengkap!", Toast.LENGTH_SHORT).show();
+                }else{
+                    double a= Integer.parseInt(totalnilai.getText().toString());
+                    double b= Integer.parseInt(hutangdagang.getText().toString());
+                    double c= Integer.parseInt(lababersih.getText().toString());
+
+
+                    double hnilai=(a-b+c)*2.5/100;
+                    nilaizakat.setText(""+hnilai);
+                }
+
 
             }
         });
@@ -58,6 +74,9 @@ public class ZakatPerdagangan extends AppCompatActivity {
                 nilaizakat.setText("");
             }
         });
+
+
+
 
     }
 }

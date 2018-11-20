@@ -19,8 +19,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CarouselView carouselView;
     CardView card1;
     CardView card2;
+    CardView card3;
+    CardView card4;
+    CardView card5;
+    CardView card6;
 
-    int[] sampleImages = {R.drawable.hadist1, R.drawable.hadist2, R.drawable.hadist3};
+    int[] sampleImages = {R.drawable.carousel1, R.drawable.carousel2, R.drawable.carousel3,R.drawable.carousel4,R.drawable.carousel5};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +50,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         card1= (CardView) findViewById(R.id.card_view);
         card2= (CardView) findViewById(R.id.card_view2);
+        card3= (CardView) findViewById(R.id.card_view3);
+        card4= (CardView) findViewById(R.id.card_view4);
+        card5= (CardView) findViewById(R.id.card_view5);
+        card6= (CardView) findViewById(R.id.card_view6);
+
 
         card1.setOnClickListener(this);
         card2.setOnClickListener(this);
+        card3.setOnClickListener(this);
+        card4.setOnClickListener(this);
+        card5.setOnClickListener(this);
+        card6.setOnClickListener(this);
     }
 
     ImageListener imagelistener= new ImageListener() {
@@ -70,11 +83,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             break;
 
             case R.id.card_view2:
-                Intent intent2 = new Intent(MainActivity.this, ZakatProfesi.class);
+                Intent intent2 = new Intent(MainActivity.this, ZakatTernak.class);
                 startActivity(intent2);
-            case R.id.card_view4:
+
+                break;
+
+            case R.id.card_view3:
                 Intent intent3 = new Intent(MainActivity.this, ZakatPerdagangan.class);
                 startActivity(intent3);
+
+                break;
+
+            case R.id.card_view4:
+                Intent intent4 = new Intent(MainActivity.this, ZakatBarangTemuan.class);
+                startActivity(intent4);
+
+                break;
+
+            case R.id.card_view5:
+                Intent intent5 = new Intent(MainActivity.this, ZakatPertanian.class);
+                startActivity(intent5);
+
+                break;
+
+            case R.id.card_view6:
+                Intent intent6 = new Intent(MainActivity.this, ZakatEmasPerak.class);
+                startActivity(intent6);
+                break;
         }
     }
 }
