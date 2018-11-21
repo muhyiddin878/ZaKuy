@@ -15,9 +15,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 public class ZakatPertanian extends AppCompatActivity {
     Spinner spinner;
@@ -45,6 +47,8 @@ public class ZakatPertanian extends AppCompatActivity {
         hasiltani=(EditText) findViewById(R.id.hasiltani);
         spinner= (Spinner) findViewById(R.id.spinner);
         nilaizakat=(TextView) findViewById(R.id.hasilnilai);
+        Locale localeID = new Locale("in", "ID");
+        final NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
 
         // Spinner element
@@ -115,10 +119,10 @@ public class ZakatPertanian extends AppCompatActivity {
                     if(b>=720){
                         if (selectedItemText=="Air Hujan/Sungai"){
                             double hnilai=a*10/100;
-                                    nilaizakat.setText(""+hnilai);
+                                    nilaizakat.setText(formatRupiah.format(hnilai));
                         }else{
                             double hnilai=a*5/100;
-                                    nilaizakat.setText(""+hnilai);
+                                    nilaizakat.setText(formatRupiah.format(hnilai));
                         }
 
                     }else{

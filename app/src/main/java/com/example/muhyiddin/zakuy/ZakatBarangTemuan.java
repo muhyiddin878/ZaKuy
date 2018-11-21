@@ -2,12 +2,17 @@ package com.example.muhyiddin.zakuy;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class ZakatBarangTemuan extends AppCompatActivity {
 
@@ -33,6 +38,9 @@ public class ZakatBarangTemuan extends AppCompatActivity {
         button1=(Button) findViewById(R.id.button1);
         buttonreset=(Button) findViewById(R.id.buttonreset);
         nilai=(TextView) findViewById(R.id.hasilnilai);
+        Locale localeID = new Locale("in", "ID");
+        final NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+
 
 
 
@@ -51,7 +59,7 @@ public class ZakatBarangTemuan extends AppCompatActivity {
 
 
                     double hnilai=a*20/100;
-                    nilai.setText(""+hnilai);
+                    nilai.setText(formatRupiah.format(hnilai));
                 }
 
 

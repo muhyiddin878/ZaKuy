@@ -9,6 +9,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class ZakatPerdagangan extends AppCompatActivity {
 
     Button button1;
@@ -38,6 +41,8 @@ public class ZakatPerdagangan extends AppCompatActivity {
         hutangdagang=(EditText) findViewById(R.id.hutangdagang);
         lababersih=(EditText) findViewById(R.id.lababersih);
         nilaizakat=(TextView) findViewById(R.id.hasilnilai);
+        Locale localeID = new Locale("in", "ID");
+        final NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
 
 
@@ -57,7 +62,7 @@ public class ZakatPerdagangan extends AppCompatActivity {
 
 
                     double hnilai=(a-b+c)*2.5/100;
-                    nilaizakat.setText(""+hnilai);
+                    nilaizakat.setText(formatRupiah.format(hnilai));
                 }
 
 

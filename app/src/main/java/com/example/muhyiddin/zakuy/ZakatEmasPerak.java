@@ -14,9 +14,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 public class ZakatEmasPerak extends AppCompatActivity {
 
@@ -48,6 +50,8 @@ public class ZakatEmasPerak extends AppCompatActivity {
         hargajual= (EditText) findViewById(R.id.hargajual);
         jumlahemasperak=(EditText) findViewById(R.id.jumlahemasperak);
         nilai=(TextView) findViewById(R.id.hasilnilai);
+        Locale localeID = new Locale("in", "ID");
+        final NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
 
         String[] jenis = new String[]{
@@ -82,6 +86,8 @@ public class ZakatEmasPerak extends AppCompatActivity {
         spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
         spinner1.setAdapter(spinnerArrayAdapter);
 
+
+
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -113,7 +119,7 @@ public class ZakatEmasPerak extends AppCompatActivity {
                     if(b>=84.8){
                             double hnilaitemp=b*2.5/100;
                             double hnilai=hnilaitemp*a;
-                            nilai.setText(""+hnilai);
+                            nilai.setText(formatRupiah.format(hnilai));
 
 
                     }else{
