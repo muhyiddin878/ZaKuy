@@ -61,19 +61,21 @@ public class ZakatProfesi extends AppCompatActivity {
                     double b= Integer.parseInt(hutang.getText().toString());
                     double c= Integer.parseInt(hargaberas.getText().toString());
 
+                    double gaji_bersih=a-c;
+
 
 
                     double hnishab=653*c;
-                    nisab.setText(""+hnishab);
+                    nisab.setText(formatRupiah.format(hnishab));
 
 
-                    if(hnishab> a){
+                    if(hnishab> gaji_bersih){
 
                         nilai.setText("Anda Tidak Wajib Berzakat");
                     }
                     else{
 
-                        double hnilai=a-(b*2.5/100);
+                        double hnilai=(gaji_bersih*2.5/100);
                         nilai.setText(formatRupiah.format(hnilai));
 
                     }
