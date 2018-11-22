@@ -110,9 +110,17 @@ public class ZakatEmasPerak extends AppCompatActivity {
             public void onClick(View view) {
 
 
+
+
+
                 if(TextUtils.isEmpty(hargajual.getText())){
                     Toast.makeText(ZakatEmasPerak.this, "Data Harus Lengkap!", Toast.LENGTH_SHORT).show();
-                }else{
+                }else if(spinner1 == null){
+                    Toast.makeText(ZakatEmasPerak.this, "Jenis Harus Dipilih!", Toast.LENGTH_SHORT).show();
+                }else if(spinner1.getSelectedItem()==null){
+                    Toast.makeText(ZakatEmasPerak.this, "Jenis Harus Dipilih!", Toast.LENGTH_SHORT).show();
+                }
+                else{
                     double a= Integer.parseInt(hargajual.getText().toString());
                     double b= Integer.parseInt(jumlahemasperak.getText().toString());
 

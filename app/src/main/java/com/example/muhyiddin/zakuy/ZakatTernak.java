@@ -109,6 +109,10 @@ public class ZakatTernak extends AppCompatActivity {
 
                 if(TextUtils.isEmpty(jumlahhewan.getText())){
                     Toast.makeText(ZakatTernak.this, "Data Harus Lengkap!", Toast.LENGTH_SHORT).show();
+                }else if(spinner1 == null){
+                    Toast.makeText(ZakatTernak.this, "Jenis Hewan Dipilih!", Toast.LENGTH_SHORT).show();
+                }else if(spinner1.getSelectedItem()==null){
+                    Toast.makeText(ZakatTernak.this, "Jenis Hewan Harus Dipilih!", Toast.LENGTH_SHORT).show();
                 }else{
                     int a= Integer.parseInt(jumlahhewan.getText().toString());
 

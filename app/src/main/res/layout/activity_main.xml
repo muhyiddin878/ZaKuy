@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:adjustViewBounds="true"
                 android:layout_height="wrap_content"
-                android:src="@drawable/logoprofesi"
+                android:src="@drawable/logoprofesi2"
                 android:background="@android:color/white"/>
 
 
@@ -66,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:adjustViewBounds="true"
                 android:layout_height="wrap_content"
-                android:src="@drawable/logobinatang"
+                android:src="@drawable/logobinatang2"
                 android:background="@android:color/white"/>
 
 
@@ -111,7 +111,7 @@
                 android:layout_width="wrap_content"
                 android:adjustViewBounds="true"
                 android:layout_height="wrap_content"
-                android:src="@drawable/logotemuan"
+                android:src="@drawable/logotemuan2"
                 android:background="@android:color/white"/>
 
 
@@ -133,7 +133,7 @@
                 android:layout_width="wrap_content"
                 android:adjustViewBounds="true"
                 android:layout_height="wrap_content"
-                android:src="@drawable/logopertanian"
+                android:src="@drawable/logopertanian2"
                 android:background="@android:color/white"/>
 
 
@@ -168,118 +168,5 @@
 
 
 
-
-    <!--<RelativeLayout-->
-
-
-        <!--android:gravity="center_horizontal|center_vertical"-->
-        <!--android:layout_below="@+id/atas"-->
-        <!--android:id="@+id/tengah"-->
-        <!--android:paddingTop="15dp"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content">-->
-
-        <!--<android.support.v7.widget.CardView-->
-            <!--xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
-            <!--android:id="@+id/card_view3"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:layout_marginRight="20dp"-->
-            <!--card_view:cardCornerRadius="4dp"-->
-            <!--card_view:cardElevation="6dp">-->
-
-            <!--<ImageView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:src="@drawable/zakat_profesi"/>-->
-
-
-        <!--</android.support.v7.widget.CardView>-->
-
-        <!--<android.support.v7.widget.CardView-->
-            <!--xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
-            <!--android:id="@+id/card_view4"-->
-            <!--android:layout_toEndOf="@+id/card_view3"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:layout_marginLeft="20dp"-->
-            <!--card_view:cardCornerRadius="4dp"-->
-            <!--card_view:cardElevation="6dp">-->
-
-            <!--<ImageView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:src="@drawable/zakat_profesi"/>-->
-
-
-
-        <!--</android.support.v7.widget.CardView>-->
-
-
-    <!--</RelativeLayout>-->
-
-
-
-
-
-    <!--<RelativeLayout-->
-        <!--android:layout_below="@+id/tengah"-->
-        <!--android:id="@+id/bawah"-->
-        <!--android:paddingTop="15dp"-->
-        <!--android:gravity="center_horizontal|center_vertical"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content">-->
-
-
-
-
-        <!--<android.support.v7.widget.CardView-->
-            <!--xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
-            <!--android:id="@+id/card_view5"-->
-            <!--android:layout_weight="1"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:layout_marginRight="20dp"-->
-            <!--card_view:cardCornerRadius="4dp"-->
-            <!--card_view:cardElevation="6dp">-->
-
-            <!--<ImageView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:src="@drawable/zakat_profesi"/>-->
-
-
-        <!--</android.support.v7.widget.CardView>-->
-
-        <!--<android.support.v7.widget.CardView-->
-            <!--xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
-            <!--android:id="@+id/card_view6"-->
-            <!--android:layout_toEndOf="@+id/card_view5"-->
-            <!--android:layout_weight="1"-->
-            <!--android:layout_width="100dp"-->
-            <!--android:layout_height="100dp"-->
-            <!--android:layout_marginLeft="20dp"-->
-            <!--card_view:cardCornerRadius="4dp"-->
-            <!--card_view:cardElevation="6dp"-->
-            <!--&gt;-->
-
-            <!--<ImageView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:src="@drawable/zakat_profesi"/>-->
-
-
-        <!--</android.support.v7.widget.CardView>-->
-
-
-
-
-    <!--</RelativeLayout>-->
-    <!--<Button-->
-        <!--android:id="@+id/button3"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:background="@drawable/rounded_button"-->
-        <!--android:text="Mulai Hitung Zakat" />-->
 
 </RelativeLayout>

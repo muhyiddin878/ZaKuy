@@ -112,6 +112,10 @@ public class ZakatPertanian extends AppCompatActivity {
 
                 if(TextUtils.isEmpty(keuntungan.getText()) || TextUtils.isEmpty(hasiltani.getText())){
                     Toast.makeText(ZakatPertanian.this, "Data Harus Lengkap!", Toast.LENGTH_SHORT).show();
+                }else if(spinner == null){
+                    Toast.makeText(ZakatPertanian.this, "Jenis Pengairan Harus Dipilih!", Toast.LENGTH_SHORT).show();
+                }else if(spinner.getSelectedItem()==null){
+                    Toast.makeText(ZakatPertanian.this, "Jenis Pengairan Harus Dipilih!", Toast.LENGTH_SHORT).show();
                 }else{
                     double a= Integer.parseInt(keuntungan.getText().toString());
                     double b= Integer.parseInt(hasiltani.getText().toString());
