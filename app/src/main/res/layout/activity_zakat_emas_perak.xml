@@ -167,11 +167,11 @@
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button3"
         android:text="Reset" />
-    <ProgressBar
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/buttonnishab"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:id="@+id/reset"
-        android:visibility="gone"/>
+        android:background="@drawable/rounded_button_4"
+        android:text="Lihat Nishab" />
 
 </LinearLayout>

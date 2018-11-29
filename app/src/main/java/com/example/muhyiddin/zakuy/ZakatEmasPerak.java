@@ -1,6 +1,8 @@
 package com.example.muhyiddin.zakuy;
 
+import android.content.DialogInterface;
 import android.graphics.Color;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -25,6 +27,7 @@ public class ZakatEmasPerak extends AppCompatActivity {
     Spinner spinner1;
     Button button1;
     Button buttonreset;
+    Button buttonnishab;
     EditText hargajual;
     EditText jumlahemasperak;
     TextView nilai;
@@ -47,6 +50,7 @@ public class ZakatEmasPerak extends AppCompatActivity {
         spinner1=(Spinner) findViewById(R.id.spinner);
         button1=( Button) findViewById(R.id.button1);
         buttonreset= (Button) findViewById(R.id.buttonreset);
+        buttonnishab= (Button) findViewById(R.id.buttonnishab);
         hargajual= (EditText) findViewById(R.id.hargajual);
         jumlahemasperak=(EditText) findViewById(R.id.jumlahemasperak);
         nilai=(TextView) findViewById(R.id.hasilnilai);
@@ -149,5 +153,29 @@ public class ZakatEmasPerak extends AppCompatActivity {
             }
         });
 
+        buttonnishab.setOnClickListener( new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+
+        AlertDialog.Builder dialog = new AlertDialog.Builder(ZakatEmasPerak.this);
+                dialog.setCancelable(true);
+                dialog.setIcon(R.drawable.logo_icon);
+                dialog.setMessage("MInimal Kepemilikan Emas/Perak 84,8 gram");
+                dialog.setTitle("Nishab: ");
+                dialog.setNegativeButton("TUTUP ", new DialogInterface.OnClickListener() {
+                     @Override
+                     public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                     }
+        });
+
+        final AlertDialog alert = dialog.create();
+        alert.show();
+            }
+        });
+
     }
 }
+
+
