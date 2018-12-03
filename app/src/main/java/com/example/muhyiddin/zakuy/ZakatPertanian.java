@@ -1,6 +1,8 @@
 package com.example.muhyiddin.zakuy;
 
+import android.content.DialogInterface;
 import android.graphics.Color;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -25,6 +27,7 @@ public class ZakatPertanian extends AppCompatActivity {
     Spinner spinner;
     Button button1;
     Button buttonreset;
+    Button buttonnishab;
     EditText keuntungan;
     EditText hasiltani;
     TextView nilaizakat;
@@ -43,6 +46,7 @@ public class ZakatPertanian extends AppCompatActivity {
 
         button1=(Button) findViewById(R.id.button1);
         buttonreset=(Button) findViewById(R.id.buttonreset);
+        buttonnishab=(Button) findViewById(R.id.buttonnishab);
         keuntungan=(EditText) findViewById(R.id.keuntungan);
         hasiltani=(EditText) findViewById(R.id.hasiltani);
         spinner= (Spinner) findViewById(R.id.spinner);
@@ -145,6 +149,27 @@ public class ZakatPertanian extends AppCompatActivity {
                 keuntungan.setText("");
                 hasiltani.setText("");
                 nilaizakat.setText("");
+            }
+        });
+        buttonnishab.setOnClickListener( new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+
+                AlertDialog.Builder dialog = new AlertDialog.Builder(ZakatPertanian.this);
+                dialog.setCancelable(true);
+                dialog.setIcon(R.drawable.logo_icon);
+                dialog.setTitle("Nishab: ");
+                dialog.setMessage("Minimal Hasil Tani Adalah 720KG");
+                dialog.setNegativeButton("TUTUP ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                final AlertDialog alert = dialog.create();
+                alert.show();
             }
         });
 

@@ -18,6 +18,7 @@ public class ZakatProfesi extends AppCompatActivity {
 
     Button button1;
     Button buttonreset;
+    Button buttonnishab;
     EditText pendapatan;
     EditText hutang;
     EditText hargaberas;
@@ -39,6 +40,7 @@ public class ZakatProfesi extends AppCompatActivity {
 
         button1=(Button) findViewById(R.id.button1);
         buttonreset=(Button) findViewById(R.id.buttonreset);
+        buttonnishab=(Button) findViewById(R.id.buttonnishab);
         pendapatan=(EditText) findViewById(R.id.pendapatan);
         hutang=(EditText) findViewById(R.id.hutang);
         hargaberas=(EditText) findViewById(R.id.hargaberas);
@@ -60,7 +62,6 @@ public class ZakatProfesi extends AppCompatActivity {
                     double a= Integer.parseInt(pendapatan.getText().toString());
                     double b= Integer.parseInt(hutang.getText().toString());
                     double c= Integer.parseInt(hargaberas.getText().toString());
-
                     double gaji_bersih=a-c;
 
 
@@ -95,6 +96,27 @@ public class ZakatProfesi extends AppCompatActivity {
                 hargaberas.setText("");
                 nisab.setText("");
                 nilai.setText("");
+            }
+        });
+        buttonnishab.setOnClickListener( new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+
+                AlertDialog.Builder dialog = new AlertDialog.Builder(ZakatProfesi.this);
+                dialog.setCancelable(true);
+                dialog.setIcon(R.drawable.logo_icon);
+                dialog.setTitle("Nishab: ");
+                dialog.setMessage("Senilai dengan Harga 653kg Beras");
+                dialog.setNegativeButton("TUTUP ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                final AlertDialog alert = dialog.create();
+                alert.show();
             }
         });
 

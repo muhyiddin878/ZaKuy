@@ -1,5 +1,7 @@
 package com.example.muhyiddin.zakuy;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -19,6 +21,7 @@ public class ZakatBarangTemuan extends AppCompatActivity {
     EditText jumlahkeuntungan;
     Button button1;
     Button buttonreset;
+    Button buttonnishab;
     TextView nilai;
 
     @Override
@@ -37,6 +40,7 @@ public class ZakatBarangTemuan extends AppCompatActivity {
         jumlahkeuntungan= (EditText) findViewById(R.id.jumlahhargatemuan);
         button1=(Button) findViewById(R.id.button1);
         buttonreset=(Button) findViewById(R.id.buttonreset);
+        buttonnishab=(Button) findViewById(R.id.buttonnishab);
         nilai=(TextView) findViewById(R.id.hasilnilai);
         Locale localeID = new Locale("in", "ID");
         final NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
@@ -71,6 +75,28 @@ public class ZakatBarangTemuan extends AppCompatActivity {
             public void onClick(View view) {
                 nilai.setText("");
                 jumlahkeuntungan.setText("");
+            }
+        });
+
+        buttonnishab.setOnClickListener( new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+
+                AlertDialog.Builder dialog = new AlertDialog.Builder(ZakatBarangTemuan.this);
+                dialog.setCancelable(true);
+                dialog.setIcon(R.drawable.logo_icon);
+                dialog.setMessage("Zakat Yang Dikeluarkan Adalah 20% dari Total harga Jual Barang Temuan");
+                dialog.setTitle("Nishab: ");
+                dialog.setNegativeButton("TUTUP ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                final AlertDialog alert = dialog.create();
+                alert.show();
             }
         });
     }

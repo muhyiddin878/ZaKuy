@@ -161,7 +161,7 @@ public class ZakatEmasPerak extends AppCompatActivity {
         AlertDialog.Builder dialog = new AlertDialog.Builder(ZakatEmasPerak.this);
                 dialog.setCancelable(true);
                 dialog.setIcon(R.drawable.logo_icon);
-                dialog.setMessage("MInimal Kepemilikan Emas/Perak 84,8 gram");
+                dialog.setMessage("Minimal Kepemilikan Emas/Perak 84,8 gram");
                 dialog.setTitle("Nishab: ");
                 dialog.setNegativeButton("TUTUP ", new DialogInterface.OnClickListener() {
                      @Override

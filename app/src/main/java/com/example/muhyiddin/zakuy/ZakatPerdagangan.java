@@ -1,5 +1,7 @@
 package com.example.muhyiddin.zakuy;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,10 +18,13 @@ public class ZakatPerdagangan extends AppCompatActivity {
 
     Button button1;
     Button buttonreset;
+    Button buttonnishab;
     EditText totalnilai;
     EditText hutangdagang;
     EditText lababersih;
     TextView nilaizakat;
+    int nishab= 46750000;
+
 
     @Override
     public void onBackPressed() {
@@ -37,6 +42,7 @@ public class ZakatPerdagangan extends AppCompatActivity {
 
         button1=(Button) findViewById(R.id.button1);
         buttonreset=(Button) findViewById(R.id.buttonreset);
+        buttonnishab=(Button) findViewById(R.id.buttonnishab);
         totalnilai=(EditText) findViewById(R.id.totalnilai);
         hutangdagang=(EditText) findViewById(R.id.hutangdagang);
         lababersih=(EditText) findViewById(R.id.lababersih);
@@ -51,16 +57,18 @@ public class ZakatPerdagangan extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+                double a= Integer.parseInt(totalnilai.getText().toString());
+                double b= Integer.parseInt(hutangdagang.getText().toString());
+                double c= Integer.parseInt(lababersih.getText().toString());
 
 
                 if(TextUtils.isEmpty(totalnilai.getText()) || TextUtils.isEmpty(hutangdagang.getText()) || TextUtils.isEmpty(lababersih.getText())){
                     Toast.makeText(ZakatPerdagangan.this, "Data Harus Lengkap!", Toast.LENGTH_SHORT).show();
-                }else{
-                    double a= Integer.parseInt(totalnilai.getText().toString());
-                    double b= Integer.parseInt(hutangdagang.getText().toString());
-                    double c= Integer.parseInt(lababersih.getText().toString());
+                }else if(a < nishab){
+                    nilaizakat.setText(("Anda Tidak Wajib Berzakat"));
+                }
 
-
+                    else{
                     double hnilai=(a-b+c)*2.5/100;
                     nilaizakat.setText(formatRupiah.format(hnilai));
                 }
@@ -77,6 +85,27 @@ public class ZakatPerdagangan extends AppCompatActivity {
                 hutangdagang.setText("");
                 lababersih.setText("");
                 nilaizakat.setText("");
+            }
+        });
+        buttonnishab.setOnClickListener( new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+
+                AlertDialog.Builder dialog = new AlertDialog.Builder(ZakatPerdagangan.this);
+                dialog.setCancelable(true);
+                dialog.setIcon(R.drawable.logo_icon);
+                dialog.setTitle("Nishab: ");
+                dialog.setMessage("Memiliki kekayaan (modal kerja dan untung) lebih besar atau setara dengan 85 gram emas murni  jika per-gram Rp. 550.000,- = Rp Rp.46.750.000,-)");
+                dialog.setNegativeButton("TUTUP ", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+                final AlertDialog alert = dialog.create();
+                alert.show();
             }
         });
 
