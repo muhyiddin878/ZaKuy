@@ -41,7 +41,11 @@
             android:hint="Jumlah harga Barang Temuan"
             android:textColorHint="@color/green"
             app:hintAnimationEnabled="true"
-            app:hintEnabled="true">
+            app:hintEnabled="true"
+            app:counterEnabled="true"
+            app:counterMaxLength="10"
+            app:counterTextAppearance="@style/counterText"
+            app:counterOverflowTextAppearance="@style/counterOverride">
 
 
             <android.support.design.widget.TextInputEditText
@@ -50,7 +54,9 @@
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:textColor="@color/red"
-                android:textSize="13dp" />
+                android:textSize="16dp"
+                android:maxLength="10"
+                android:ems="10"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -64,12 +70,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button2"
         android:text="Mulai Hitung Zakat" />
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:id="@+id/hasil"
-        android:visibility="gone"/>
+
 
 
 

@@ -86,7 +86,7 @@ public class ZakatBarangTemuan extends AppCompatActivity {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(ZakatBarangTemuan.this);
                 dialog.setCancelable(true);
                 dialog.setIcon(R.drawable.logo_icon);
-                dialog.setMessage("Zakat Yang Dikeluarkan Adalah 20% dari Total harga Jual Barang Temuan");
+                dialog.setMessage("Tidak Ada Minimal, Karena Merupakan Barang Temuan");
                 dialog.setTitle("Nishab: ");
                 dialog.setNegativeButton("TUTUP ", new DialogInterface.OnClickListener() {
                     @Override

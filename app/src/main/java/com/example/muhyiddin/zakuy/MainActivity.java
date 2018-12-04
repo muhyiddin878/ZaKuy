@@ -1,8 +1,10 @@
 package com.example.muhyiddin.zakuy;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -119,7 +121,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
-            super.onBackPressed();
+
+            AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+            dialog.setCancelable(true);
+            dialog.setIcon(R.drawable.logo_icon);
+            dialog.setMessage("Anda Yakin Akan Keluar?");
+            dialog.setTitle("Peringatan: ");
+            dialog.setNegativeButton("Batal ", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+            dialog.setPositiveButton("Keluar", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    MainActivity.this.finish();
+                }
+            });
+
+            final AlertDialog alert = dialog.create();
+            alert.show();
             return;
         }
         this.doubleBackToExitPressedOnce = true;
