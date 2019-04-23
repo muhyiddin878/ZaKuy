@@ -24,6 +24,11 @@ public class ZakatBarangTemuan extends AppCompatActivity {
     Button buttonnishab;
     TextView nilai;
 
+
+    private String currentNominal = "0";
+    Locale localeID = new Locale("in", "ID");
+    private NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+
     @Override
     public void onBackPressed() {
 
@@ -42,9 +47,10 @@ public class ZakatBarangTemuan extends AppCompatActivity {
         buttonreset=(Button) findViewById(R.id.buttonreset);
         buttonnishab=(Button) findViewById(R.id.buttonnishab);
         nilai=(TextView) findViewById(R.id.hasilnilai);
-        Locale localeID = new Locale("in", "ID");
-        final NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
+
+        jumlahkeuntungan.setText(formatRupiah.format(Double.parseDouble(currentNominal)));
+        jumlahkeuntungan.setSelection(jumlahkeuntungan.getText().length());
 
 
 
@@ -58,7 +64,7 @@ public class ZakatBarangTemuan extends AppCompatActivity {
                 if(TextUtils.isEmpty(jumlahkeuntungan.getText())){
                     Toast.makeText(ZakatBarangTemuan.this, "Data must be complete!", Toast.LENGTH_SHORT).show();
                 }else{
-                    double a= Integer.parseInt(jumlahkeuntungan.getText().toString());
+                    double a = Double.parseDouble(jumlahkeuntungan.getText().toString().replaceAll("[Rp,.]", ""));
 
 
 
@@ -75,6 +81,38 @@ public class ZakatBarangTemuan extends AppCompatActivity {
             public void onClick(View view) {
                 nilai.setText("");
                 jumlahkeuntungan.setText("");
+            }
+        });
+
+        jumlahkeuntungan.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (!charSequence.toString().equals(currentNominal)){
+                    jumlahkeuntungan.removeTextChangedListener(this);
+
+
+                    currentNominal = charSequence.toString().replaceAll("[Rp,.]", "");
+
+                    if (currentNominal.equals("")){
+                        currentNominal = "0";
+                    }
+
+                    jumlahkeuntungan.setText(formatRupiah.format(Double.parseDouble(currentNominal)));
+                    jumlahkeuntungan.setSelection(jumlahkeuntungan.getText().length());
+
+
+                    jumlahkeuntungan.addTextChangedListener(this);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
             }
         });
 

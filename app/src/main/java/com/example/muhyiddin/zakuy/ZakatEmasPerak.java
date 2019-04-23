@@ -5,7 +5,9 @@ import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -32,6 +34,10 @@ public class ZakatEmasPerak extends AppCompatActivity {
     EditText jumlahemasperak;
     TextView nilai;
     String  selectedItemText;
+    private String currentNominal = "0";
+    Locale localeID = new Locale("in", "ID");
+    private NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+
 
 
     @Override
@@ -54,9 +60,9 @@ public class ZakatEmasPerak extends AppCompatActivity {
         hargajual= (EditText) findViewById(R.id.hargajual);
         jumlahemasperak=(EditText) findViewById(R.id.jumlahemasperak);
         nilai=(TextView) findViewById(R.id.hasilnilai);
-        Locale localeID = new Locale("in", "ID");
-        final NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
+        hargajual.setText(formatRupiah.format(Double.parseDouble(currentNominal)));
+        hargajual.setSelection(hargajual.getText().length());
 
         String[] jenis = new String[]{
                 "Gold",
@@ -108,6 +114,38 @@ public class ZakatEmasPerak extends AppCompatActivity {
             }
         });
 
+        hargajual.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (!charSequence.toString().equals(currentNominal)){
+                    hargajual.removeTextChangedListener(this);
+
+
+                    currentNominal = charSequence.toString().replaceAll("[Rp,.]", "");
+
+                    if (currentNominal.equals("")){
+                        currentNominal = "0";
+                    }
+
+                    hargajual.setText(formatRupiah.format(Double.parseDouble(currentNominal)));
+                    hargajual.setSelection(hargajual.getText().length());
+
+
+                    hargajual.addTextChangedListener(this);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
         button1.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -125,7 +163,7 @@ public class ZakatEmasPerak extends AppCompatActivity {
                     Toast.makeText(ZakatEmasPerak.this, "Types Must Be Selected!", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    double a= Integer.parseInt(hargajual.getText().toString());
+                    double a = Double.parseDouble(hargajual.getText().toString().replaceAll("[Rp,.]", ""));
                     double b= Integer.parseInt(jumlahemasperak.getText().toString());
 
                     if(b>=84.8){

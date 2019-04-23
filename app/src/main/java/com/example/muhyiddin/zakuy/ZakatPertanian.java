@@ -5,7 +5,9 @@ import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +34,9 @@ public class ZakatPertanian extends AppCompatActivity {
     EditText hasiltani;
     TextView nilaizakat;
     String selectedItemText;
+    private String currentNominal = "0";
+    Locale localeID = new Locale("in", "ID");
+    private NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
     @Override
     public void onBackPressed() {
@@ -51,8 +56,12 @@ public class ZakatPertanian extends AppCompatActivity {
         hasiltani=(EditText) findViewById(R.id.hasiltani);
         spinner= (Spinner) findViewById(R.id.spinner);
         nilaizakat=(TextView) findViewById(R.id.hasilnilai);
-        Locale localeID = new Locale("in", "ID");
-        final NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+
+
+
+        keuntungan.setText(formatRupiah.format(Double.parseDouble(currentNominal)));
+        keuntungan.setSelection(keuntungan.getText().length());
+
 
 
         // Spinner element
@@ -106,6 +115,37 @@ public class ZakatPertanian extends AppCompatActivity {
             }
         });
 
+        keuntungan.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (!charSequence.toString().equals(currentNominal)){
+                    keuntungan.removeTextChangedListener(this);
+
+
+                    currentNominal = charSequence.toString().replaceAll("[Rp,.]", "");
+
+                    if (currentNominal.equals("")){
+                        currentNominal = "0";
+                    }
+
+                    keuntungan.setText(formatRupiah.format(Double.parseDouble(currentNominal)));
+                    keuntungan.setSelection(keuntungan.getText().length());
+
+
+                    keuntungan.addTextChangedListener(this);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
 
         button1.setOnClickListener(new View.OnClickListener(){
@@ -121,7 +161,7 @@ public class ZakatPertanian extends AppCompatActivity {
                 }else if(spinner.getSelectedItem()==null){
                     Toast.makeText(ZakatPertanian.this, "Watering Types Must Be Selected!", Toast.LENGTH_SHORT).show();
                 }else{
-                    double a= Integer.parseInt(keuntungan.getText().toString());
+                    double a = Double.parseDouble(keuntungan.getText().toString().replaceAll("[Rp,.]", ""));
                     double b= Integer.parseInt(hasiltani.getText().toString());
 
                     if(b>=720){

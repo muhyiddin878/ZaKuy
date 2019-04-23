@@ -4,7 +4,9 @@ import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,6 +27,9 @@ public class ZakatProfesi extends AppCompatActivity {
     TextView nisab;
     TextView nilai;
     boolean cek=true;
+    private String currentNominal = "0";
+    Locale localeID = new Locale("in", "ID");
+    private NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
     @Override
     public void onBackPressed() {
@@ -46,11 +51,19 @@ public class ZakatProfesi extends AppCompatActivity {
         hargaberas=(EditText) findViewById(R.id.hargaberas);
         nisab=(TextView) findViewById(R.id.hasilnisab);
         nilai=(TextView) findViewById(R.id.hasilnilai);
-        Locale localeID = new Locale("in", "ID");
-        final NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
 
 
 
+
+
+        pendapatan.setText(formatRupiah.format(Double.parseDouble(currentNominal)));
+        pendapatan.setSelection(pendapatan.getText().length());
+
+        hutang.setText(formatRupiah.format(Double.parseDouble(currentNominal)));
+        hutang.setSelection(pendapatan.getText().length());
+
+        hargaberas.setText(formatRupiah.format(Double.parseDouble(currentNominal)));
+        hargaberas.setSelection(pendapatan.getText().length());
 
 
         button1.setOnClickListener(new View.OnClickListener() {
@@ -59,9 +72,9 @@ public class ZakatProfesi extends AppCompatActivity {
                 if(TextUtils.isEmpty(pendapatan.getText()) || TextUtils.isEmpty(hutang.getText()) || TextUtils.isEmpty(hargaberas.getText())){
                     Toast.makeText(ZakatProfesi.this, "Data Must be Complete!", Toast.LENGTH_SHORT).show();
                 }else{
-                    double a= Integer.parseInt(pendapatan.getText().toString());
-                    double b= Integer.parseInt(hutang.getText().toString());
-                    double c= Integer.parseInt(hargaberas.getText().toString());
+                    double a = Double.parseDouble(pendapatan.getText().toString().replaceAll("[Rp,.]", ""));
+                    double b = Double.parseDouble(pendapatan.getText().toString().replaceAll("[Rp,.]", ""));
+                    double c = Double.parseDouble(pendapatan.getText().toString().replaceAll("[Rp,.]", ""));
                     double gaji_bersih=a-c;
 
 
@@ -83,6 +96,99 @@ public class ZakatProfesi extends AppCompatActivity {
                 }
 
 
+
+            }
+        });
+
+        pendapatan.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (!charSequence.toString().equals(currentNominal)){
+                    pendapatan.removeTextChangedListener(this);
+
+                    currentNominal = charSequence.toString().replaceAll("[Rp,.]", "");
+
+                    if (currentNominal.equals("")){
+                        currentNominal = "0";
+                    }
+
+                    pendapatan.setText(formatRupiah.format(Double.parseDouble(currentNominal)));
+                    pendapatan.setSelection(pendapatan.getText().length());
+
+
+                    pendapatan.addTextChangedListener(this);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        hutang.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (!charSequence.toString().equals(currentNominal)){
+                    hutang.removeTextChangedListener(this);
+
+                    currentNominal = charSequence.toString().replaceAll("[Rp,.]", "");
+
+                    if (currentNominal.equals("")){
+                        currentNominal = "0";
+                    }
+
+                    hutang.setText(formatRupiah.format(Double.parseDouble(currentNominal)));
+                    hutang.setSelection(hutang.getText().length());
+
+
+                    hutang.addTextChangedListener(this);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        hargaberas.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (!charSequence.toString().equals(currentNominal)){
+                    hargaberas.removeTextChangedListener(this);
+
+                    currentNominal = charSequence.toString().replaceAll("[Rp,.]", "");
+
+                    if (currentNominal.equals("")){
+                        currentNominal = "0";
+                    }
+
+                    hargaberas.setText(formatRupiah.format(Double.parseDouble(currentNominal)));
+                    hargaberas.setSelection(hargaberas.getText().length());
+
+
+                    hargaberas.addTextChangedListener(this);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
 
             }
         });

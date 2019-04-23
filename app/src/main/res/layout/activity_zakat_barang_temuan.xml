@@ -43,7 +43,7 @@
             app:hintAnimationEnabled="true"
             app:hintEnabled="true"
             app:counterEnabled="true"
-            app:counterMaxLength="10"
+            app:counterMaxLength="13"
             app:counterTextAppearance="@style/counterText"
             app:counterOverflowTextAppearance="@style/counterOverride">
 
@@ -55,8 +55,8 @@
                 android:inputType="number"
                 android:textColor="@color/red"
                 android:textSize="16dp"
-                android:maxLength="10"
-                android:ems="10"/>
+                android:maxLength="13"
+                android:ems="13"/>
 
         </android.support.design.widget.TextInputLayout>
 

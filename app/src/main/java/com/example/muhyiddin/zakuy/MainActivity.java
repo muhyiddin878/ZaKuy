@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
             dialog.setCancelable(true);
             dialog.setIcon(R.drawable.logo_icon);
-            dialog.setMessage("ARe You Sure Want to Quit??");
+            dialog.setMessage("Are You Sure Want to Quit??");
             dialog.setTitle("Warning: ");
             dialog.setNegativeButton("Cancel ", new DialogInterface.OnClickListener() {
                 @Override
