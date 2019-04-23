@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="Hitung Zakat Emas dan Perak"
+            android:text="Calculate Gold and Silver Zakat"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="Jenis"
+            android:text="Type"
             android:textColor="@color/green"
             android:textSize="14sp" />
 
@@ -57,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Harga Jual/gram"
+            android:hint="Selling Price / gram"
             android:textColorHint="@color/green"
             app:hintAnimationEnabled="true"
             app:hintEnabled="true"
@@ -83,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Jumlah Emas/Perak yang dimiliki(Gram)"
+            android:hint="Amount of Gold / Silver owned (Gram)"
             android:textColorHint="@color/green"
             app:hintAnimationEnabled="true"
             app:hintEnabled="true"
@@ -116,7 +116,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button2"
-        android:text="Mulai Hitung Zakat" />
+        android:text="Start Calculating Zakat" />
 
 
 
@@ -155,7 +155,6 @@
                 android:text=""
                 android:textColor="@color/green"
                 android:textSize="14sp"
-                android:maxLength="12"
                 android:layout_toEndOf="@+id/nilai"
                 android:textStyle="bold"
 
@@ -180,6 +179,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button_4"
-        android:text="Lihat Nishab" />
+        android:text="Show Nishab" />
 
 </LinearLayout>

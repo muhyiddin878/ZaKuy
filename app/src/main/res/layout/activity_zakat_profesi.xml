@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="Hitung Zakat Profesi"
+            android:text="Calculate Professional Zakat"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Pendapatan"
+            android:hint="Income"
             android:textColorHint="@color/green"
             app:hintAnimationEnabled="true"
             app:hintEnabled="true"
@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Hutang"
+            android:hint="Debt"
             android:textColorHint="@color/green"
             app:hintAnimationEnabled="true"
             app:hintEnabled="true"
@@ -86,7 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Harga Beras"
+            android:hint="Rice Prices"
             android:textColorHint="@color/green"
             app:hintAnimationEnabled="true"
             app:hintEnabled="true"
@@ -117,7 +117,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/rounded_button2"
-    android:text="Mulai Hitung Zakat" />
+    android:text="Start Calculating Zakat" />
 
 
 
@@ -178,7 +178,6 @@
                 android:text=""
                 android:textColor="@color/green"
                 android:textSize="14sp"
-                android:maxLength="12"
                 android:layout_toEndOf="@+id/nilai"
                 android:textStyle="bold"
 
@@ -203,6 +202,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button_4"
-        android:text="Lihat Nishab" />
+        android:text="Show Nishab" />
 
 </LinearLayout>

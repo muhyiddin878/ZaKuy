@@ -125,15 +125,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
             dialog.setCancelable(true);
             dialog.setIcon(R.drawable.logo_icon);
-            dialog.setMessage("Anda Yakin Akan Keluar?");
-            dialog.setTitle("Peringatan: ");
-            dialog.setNegativeButton("Batal ", new DialogInterface.OnClickListener() {
+            dialog.setMessage("ARe You Sure Want to Quit??");
+            dialog.setTitle("Warning: ");
+            dialog.setNegativeButton("Cancel ", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.cancel();
                 }
             });
-            dialog.setPositiveButton("Keluar", new DialogInterface.OnClickListener() {
+            dialog.setPositiveButton("Quit", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     MainActivity.this.finish();

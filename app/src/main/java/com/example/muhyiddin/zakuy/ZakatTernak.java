@@ -57,9 +57,9 @@ public class ZakatTernak extends AppCompatActivity {
 
 
         String[] jenis = new String[]{
-                "Unta",
-                "Sapi",
-                "Kambing"
+                "Camel",
+                "Cow",
+                "Goat"
 
         };
 
@@ -85,7 +85,7 @@ public class ZakatTernak extends AppCompatActivity {
                 return view;
             }
         };
-        spinner1.setPrompt("Pilih Jenis Hewan");
+        spinner1.setPrompt("Choose the Type of Animal");
         spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item);
         spinner1.setAdapter(spinnerArrayAdapter);
 
@@ -112,62 +112,62 @@ public class ZakatTernak extends AppCompatActivity {
 
 
                 if(TextUtils.isEmpty(jumlahhewan.getText())){
-                    Toast.makeText(ZakatTernak.this, "Data Harus Lengkap!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ZakatTernak.this, "Data Must be Complete!", Toast.LENGTH_SHORT).show();
                 }else if(spinner1 == null){
-                    Toast.makeText(ZakatTernak.this, "Jenis Hewan Dipilih!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ZakatTernak.this, "Animal Type Must be Selected!", Toast.LENGTH_SHORT).show();
                 }else if(spinner1.getSelectedItem()==null){
-                    Toast.makeText(ZakatTernak.this, "Jenis Hewan Harus Dipilih!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ZakatTernak.this, "Animal Type Must be Selected!", Toast.LENGTH_SHORT).show();
                 }else{
                     int a= Integer.parseInt(jumlahhewan.getText().toString());
 
 
-                        if(selectedItemText=="Unta"){
+                        if(selectedItemText=="Camel"){
                             if(a<5){
-                                nilai.setText("Anda Tidak Wajib Berzakat");
+                                nilai.setText("You are Not Obliged to Pay Zakat");
                             }else if(a>=5 && a<10){
-                                nilai.setText("1 ekor kambing umur 2 tahun, atau 1 ekor domba umur 1 tahun");
+                                nilai.setText("1 two year old goat, or 1 one year old sheep");
 
                             }else if(a>=10&&a<15){
-                                nilai.setText("2 ekor kambing umur 2 tahun, atau 2 ekor domba umur 1 tahun");
+                                nilai.setText("2 two year old goats, or 2 one year old sheep");
                             }
                             else if(a>=15 && a<20){
-                                nilai.setText("3 ekor kambing umur 2 tahun, atau 3 ekor domba umur 1 tahun");
+                                nilai.setText("3 two year old goats, or 3 one year old sheep");
                             }
                             else if(a>=20 && a <25){
-                                nilai.setText("4 ekor kambing umur 2 tahun, atau 4 ekor domba umur 1 tahun");
+                                nilai.setText("4 two year old goats, or 4 one year old sheep");
                             }else if(a>=25 && a<36){
-                                nilai.setText("1 ekor onta betina umur 1 tahun");
+                                nilai.setText("1 female camel 1 year old");
                             }else if(a>=36 && a<46){
-                                nilai.setText("1 ekor onta betina umur 2 tahun");
+                                nilai.setText("1 female camel 2 years old");
                             }else if(a>=46 && a<61){
-                                nilai.setText("1 ekor onta betina umur 3 tahun");
+                                nilai.setText("1 female camel 3 years old");
                             }else if(a>=61 && a<76){
-                                nilai.setText("1 ekor onta betina umur 4 tahun");
+                                nilai.setText("1 female camel 4 years old");
                             }else if(a>=76 && a<91){
-                                nilai.setText("2 ekor onta betina umur 2 tahun");
+                                nilai.setText("2 female camels aged 2 years");
                             }else if(a>=91 && a<121){
-                                nilai.setText("2 ekor onta betina umur 3 tahun");
+                                nilai.setText("2 female camels aged 3 years");
                             }else {
-                                nilai.setText("3 ekor onta betina umur 2 tahun");
+                                nilai.setText("3 female camels aged 2 years");
                             }
 
-                        }else if(selectedItemText=="Sapi"){
+                        }else if(selectedItemText=="Cow"){
                             if(a<30){
-                                nilai.setText("Anda Tidak Wajib Berzakat");
+                                nilai.setText("You are Not Obliged to Pay Zakat");
                             }else if (a>=30 && a<40){
-                                nilai.setText("1 ekor sapi umur 1 tahun");
+                                nilai.setText("1 cow aged 1 year");
                             }else{
-                                nilai.setText("1 ekor sapi umur 2 tahun");
+                                nilai.setText("1 cow aged 2 years");
                             }
                         }else {
                             if(a<40){
-                                nilai.setText("Anda Tidak Wajib Berzakat");
+                                nilai.setText("You are Not Obliged to Pay Zakat");
                             }else if(a>=40 && a<121){
-                                nilai.setText("2 ekor kambing umur 2 tahun, atau 2 ekor domba umur 1 tahun");
+                                nilai.setText("2 two year old goats, or 2 one year old sheep");
                             }else if(a>=121 && a<201){
-                                nilai.setText("3 ekor kambing umur 2 tahun, atau 3 ekor domba umur 1 tahun");
+                                nilai.setText("3 two year old goats, or 3 one year old sheep");
                             }else {
-                                nilai.setText("4 ekor kambing umur 2 tahun, atau 4 ekor domba umur 1 tahun.");
+                                nilai.setText("4 two year old goats, or 4 one year old sheep");
                             }
 
                         }
@@ -202,10 +202,10 @@ public class ZakatTernak extends AppCompatActivity {
                 dialog.setCancelable(true);
                 dialog.setIcon(R.drawable.logo_icon);
                 dialog.setTitle("Nishab: ");
-                dialog.setMessage("Jika Kambing Minimal 40 Eekor; " +
-                        "Jika Sapi Minimal 30 Ekor; " +
-                        "Jika Unta Minimal 5 Ekor");
-                dialog.setNegativeButton("TUTUP ", new DialogInterface.OnClickListener() {
+                dialog.setMessage("If the Goat is at Least 40 Animals" +
+                        "If the Cow is at Least 30 Animals " +
+                        "If the Camel is at Least 5 Animals");
+                dialog.setNegativeButton("CLOSE ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();

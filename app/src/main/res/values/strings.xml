@@ -4,20 +4,16 @@
 
     <string name="next">Next</string>
     <string name="skip">Skip</string>
-    <string name="pentingnyazakat1">Kenapa Harus Zakat?</string>
-    <string name="manfaatzakat">Apa Manfaatnya?</string>
-    <string name="hukumzakat">Apa Hukum Berzakat?</string>
+    <string name="pentingnyazakat1">why do you have to pay zakat?</string>
+    <string name="manfaatzakat">what are the benefits?</string>
+    <string name="hukumzakat">What is the Law of Zakat?</string>
     <string name="hadist1"> لا يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لأَخِيهِ مَا يُحِبُّ لِنَفْسِه</string>
-    <string name="hadist1arti">“Tidak sempurna iman seseorang di antara kalian sehingga dia mencintai saudaranya sebagaimana dia mencintai dirinya sendiri.(HR.MUSLIM)"</string>
+    <string name="hadist1arti">“The imperfectness of someone among you so that he loves his brother as he loves himself.(HR.MUSLIM)"</string>
     <string name="hadist2">وَلَمْ يَمْنَعُوا زَكَاةَ أَمْوَالِهِمْ إِلاَّ مُنِعُوا الْقَطْرَ مِنَ السَّمَاءِ وَلَوْلاَ الْبَهَائِمُ لَمْ يُمْطَرُوا </string>
-    <string name="hadist2arti">“Tidaklah suatu kaum enggan mengeluarkan zakat dari harta-harta mereka, melainkan mereka akan dicegah dari mendapatkan hujan dari langit. Sekiranya bukan karena binatang-binatang ternak, niscaya mereka tidak diberi hujan.(HR.MUSLIM)</string>
+    <string name="hadist2arti">“No people are reluctant to give alms from their property, but they will be prevented from getting rain from the sky. If it were not for livestock, they would not have been given rain.(HR.MUSLIM)</string>
     <string name="hadist3">وَأَقِيمُوا الصَّلَاةَ وَآَتُوا الزَّكَاةَ </string>
-    <string name="hadist3arti">Dan dirikanlah shalat, tunaikanlah zakat dan ruku’lah beserta orang-orang yang ruku’.(QS. Al Baqarah: 43)”</string>
+    <string name="hadist3arti">And establish prayer and give zakah and bow with those who bow [in worship and obedience]. (QS. Al Baqarah: 43)”</string>
 
-    <string name="photographing">PHOTOGRAPHER</string>
-    <string name="cameraman">The best thing about a picture is that it never changes, even when the people in it do. If photgraphy is your passion then bonjour is a nice place for you !</string>
-    <string name="traveler">It doesn’t matter if you’re interested in budget travel, luxury travel, adventure travel, if you are a traveller then bonjour is a nice place for you !</string>
-    <string name="opening">opening</string>
 
 
     <string name="jenispengairan">

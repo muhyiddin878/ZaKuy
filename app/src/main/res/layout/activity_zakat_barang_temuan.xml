@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="Hitung Zakat Barang Temuan"
+            android:text="Calculate Zakah on Goods Findings"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Jumlah harga Barang Temuan"
+            android:hint="Amount of item price found"
             android:textColorHint="@color/green"
             app:hintAnimationEnabled="true"
             app:hintEnabled="true"
@@ -69,7 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button2"
-        android:text="Mulai Hitung Zakat" />
+        android:text="Start Calculating Zakat" />
 
 
 
@@ -106,7 +106,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/hasilnilai"
                 android:text=""
-                android:maxLength="12"
                 android:textColor="@color/green"
                 android:textSize="14sp"
                 android:layout_toEndOf="@+id/nilai"
@@ -133,7 +132,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button_4"
-        android:text="Lihat Nishab" />
+        android:text="Show Nishab" />
 
 
 </LinearLayout>

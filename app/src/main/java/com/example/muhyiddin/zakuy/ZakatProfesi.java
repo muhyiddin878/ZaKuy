@@ -57,7 +57,7 @@ public class ZakatProfesi extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(TextUtils.isEmpty(pendapatan.getText()) || TextUtils.isEmpty(hutang.getText()) || TextUtils.isEmpty(hargaberas.getText())){
-                    Toast.makeText(ZakatProfesi.this, "Data Harus Lengkap!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ZakatProfesi.this, "Data Must be Complete!", Toast.LENGTH_SHORT).show();
                 }else{
                     double a= Integer.parseInt(pendapatan.getText().toString());
                     double b= Integer.parseInt(hutang.getText().toString());
@@ -72,7 +72,7 @@ public class ZakatProfesi extends AppCompatActivity {
 
                     if(hnishab> gaji_bersih){
 
-                        nilai.setText("Anda Tidak Wajib Berzakat");
+                        nilai.setText("You are Not Obliged to Pay Zakat");
                     }
                     else{
 
@@ -107,8 +107,8 @@ public class ZakatProfesi extends AppCompatActivity {
                 dialog.setCancelable(true);
                 dialog.setIcon(R.drawable.logo_icon);
                 dialog.setTitle("Nishab: ");
-                dialog.setMessage("Senilai dengan Harga 653kg Beras");
-                dialog.setNegativeButton("TUTUP ", new DialogInterface.OnClickListener() {
+                dialog.setMessage("\n" + "Worth the price of 653kg of rice");
+                dialog.setNegativeButton("CLOSE ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();

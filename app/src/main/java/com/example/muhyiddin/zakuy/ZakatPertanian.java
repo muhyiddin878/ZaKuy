@@ -59,12 +59,12 @@ public class ZakatPertanian extends AppCompatActivity {
         spinner = (Spinner) findViewById(R.id.spinner);
 
         String[] jenis = new String[]{
-                "Air Hujan/Sungai",
-                "Irigasi"
+                "Rainwater / River",
+                "irrigation"
 
         };
 
-        spinner.setPrompt("Pilih Jenis  Pengairan ");
+        spinner.setPrompt("Select Type of Irrigation ");
         final List<String> jenisperairan = new ArrayList<>(Arrays.asList(jenis));
 
 
@@ -115,17 +115,17 @@ public class ZakatPertanian extends AppCompatActivity {
 
 
                 if(TextUtils.isEmpty(keuntungan.getText()) || TextUtils.isEmpty(hasiltani.getText())){
-                    Toast.makeText(ZakatPertanian.this, "Data Harus Lengkap!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ZakatPertanian.this, "Data Must be Complete!", Toast.LENGTH_SHORT).show();
                 }else if(spinner == null){
-                    Toast.makeText(ZakatPertanian.this, "Jenis Pengairan Harus Dipilih!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ZakatPertanian.this, "Watering Types Must Be Selected!", Toast.LENGTH_SHORT).show();
                 }else if(spinner.getSelectedItem()==null){
-                    Toast.makeText(ZakatPertanian.this, "Jenis Pengairan Harus Dipilih!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ZakatPertanian.this, "Watering Types Must Be Selected!", Toast.LENGTH_SHORT).show();
                 }else{
                     double a= Integer.parseInt(keuntungan.getText().toString());
                     double b= Integer.parseInt(hasiltani.getText().toString());
 
                     if(b>=720){
-                        if (selectedItemText=="Air Hujan/Sungai"){
+                        if (selectedItemText=="Rainwater / River"){
                             double hnilai=a*10/100;
                                     nilaizakat.setText(formatRupiah.format(hnilai));
                         }else{
@@ -135,7 +135,7 @@ public class ZakatPertanian extends AppCompatActivity {
 
                     }else{
 
-                        nilaizakat.setText("Anda Tidak Wajib Berzakat");
+                        nilaizakat.setText("You are Not Obliged to Pay Zakat");
                     }
                 }
 
@@ -160,8 +160,8 @@ public class ZakatPertanian extends AppCompatActivity {
                 dialog.setCancelable(true);
                 dialog.setIcon(R.drawable.logo_icon);
                 dialog.setTitle("Nishab: ");
-                dialog.setMessage("Minimal Hasil Tani Adalah 720KG");
-                dialog.setNegativeButton("TUTUP ", new DialogInterface.OnClickListener() {
+                dialog.setMessage("Minimum Farming Results Are 720KG");
+                dialog.setNegativeButton("CLOSE ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();

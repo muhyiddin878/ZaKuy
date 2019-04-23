@@ -59,11 +59,11 @@ public class ZakatEmasPerak extends AppCompatActivity {
 
 
         String[] jenis = new String[]{
-                "Emas",
-                "Perak"
+                "Gold",
+                "SIlver"
 
         };
-        spinner1.setPrompt("Pilih Jenis");
+        spinner1.setPrompt("Select Type");
         final List<String> jenisemasperak = new ArrayList<>(Arrays.asList(jenis));
 
 
@@ -118,11 +118,11 @@ public class ZakatEmasPerak extends AppCompatActivity {
 
 
                 if(TextUtils.isEmpty(hargajual.getText())){
-                    Toast.makeText(ZakatEmasPerak.this, "Data Harus Lengkap!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ZakatEmasPerak.this, "Data Must be Complete!", Toast.LENGTH_SHORT).show();
                 }else if(spinner1 == null){
-                    Toast.makeText(ZakatEmasPerak.this, "Jenis Harus Dipilih!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ZakatEmasPerak.this, "Types Must Be Selected!", Toast.LENGTH_SHORT).show();
                 }else if(spinner1.getSelectedItem()==null){
-                    Toast.makeText(ZakatEmasPerak.this, "Jenis Harus Dipilih!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ZakatEmasPerak.this, "Types Must Be Selected!", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     double a= Integer.parseInt(hargajual.getText().toString());
@@ -136,7 +136,7 @@ public class ZakatEmasPerak extends AppCompatActivity {
 
                     }else{
 
-                        nilai.setText("Anda Tidak Wajib Berzakat");
+                        nilai.setText("You are Not Obliged to Pay Zakat");
                     }
                 }
 
@@ -161,9 +161,9 @@ public class ZakatEmasPerak extends AppCompatActivity {
         AlertDialog.Builder dialog = new AlertDialog.Builder(ZakatEmasPerak.this);
                 dialog.setCancelable(true);
                 dialog.setIcon(R.drawable.logo_icon);
-                dialog.setMessage("Minimal Kepemilikan Emas/Perak 84,8 gram");
+                dialog.setMessage("Minimum Gold / Silver Ownership 84.8 grams");
                 dialog.setTitle("Nishab: ");
-                dialog.setNegativeButton("TUTUP ", new DialogInterface.OnClickListener() {
+                dialog.setNegativeButton("CLOSE ", new DialogInterface.OnClickListener() {
                      @Override
                      public void onClick(DialogInterface dialog, int which) {
                                 dialog.cancel();

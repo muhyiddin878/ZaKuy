@@ -63,9 +63,9 @@ public class ZakatPerdagangan extends AppCompatActivity {
 
 
                 if(TextUtils.isEmpty(totalnilai.getText()) || TextUtils.isEmpty(hutangdagang.getText()) || TextUtils.isEmpty(lababersih.getText())){
-                    Toast.makeText(ZakatPerdagangan.this, "Data Harus Lengkap!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ZakatPerdagangan.this, "Data Must be Complete!", Toast.LENGTH_SHORT).show();
                 }else if(a < nishab){
-                    nilaizakat.setText(("Anda Tidak Wajib Berzakat"));
+                    nilaizakat.setText(("You are Not Obliged to Pay Zakat"));
                 }
 
                     else{
@@ -96,8 +96,8 @@ public class ZakatPerdagangan extends AppCompatActivity {
                 dialog.setCancelable(true);
                 dialog.setIcon(R.drawable.logo_icon);
                 dialog.setTitle("Nishab: ");
-                dialog.setMessage("Memiliki kekayaan (modal kerja dan untung) lebih besar atau setara dengan 85 gram emas murni  jika per-gram Rp. 550.000,- = Rp Rp.46.750.000,-)");
-                dialog.setNegativeButton("TUTUP ", new DialogInterface.OnClickListener() {
+                dialog.setMessage("Having wealth (working capital and profit) is greater or equivalent to 85 grams of pure gold if per gram Rp. 550,000 - = Rp.46,750,000 -)");
+                dialog.setNegativeButton("CLOSE ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();

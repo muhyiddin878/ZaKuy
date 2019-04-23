@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:adjustViewBounds="true"
                 android:layout_height="wrap_content"
-                android:src="@drawable/logoprofesi2"
+                android:src="@drawable/logoprofesi3"
                 android:background="@android:color/white"/>
 
 
@@ -66,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:adjustViewBounds="true"
                 android:layout_height="wrap_content"
-                android:src="@drawable/logobinatang2"
+                android:src="@drawable/logobinatang3"
                 android:background="@android:color/white"/>
 
 
@@ -88,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:adjustViewBounds="true"
                 android:layout_height="wrap_content"
-                android:src="@drawable/logoperdagangan"
+                android:src="@drawable/logoperdagangan3"
                 android:background="@android:color/white"/>
 
 
@@ -111,7 +111,7 @@
                 android:layout_width="wrap_content"
                 android:adjustViewBounds="true"
                 android:layout_height="wrap_content"
-                android:src="@drawable/logotemuan2"
+                android:src="@drawable/logotemuan3"
                 android:background="@android:color/white"/>
 
 
@@ -133,7 +133,7 @@
                 android:layout_width="wrap_content"
                 android:adjustViewBounds="true"
                 android:layout_height="wrap_content"
-                android:src="@drawable/logopertanian2"
+                android:src="@drawable/logopertanian3"
                 android:background="@android:color/white"/>
 
 
@@ -156,7 +156,7 @@
                 android:layout_width="wrap_content"
                 android:adjustViewBounds="true"
                 android:layout_height="wrap_content"
-                android:src="@drawable/logoemas"
+                android:src="@drawable/logoemas3"
                 android:background="@android:color/white"/>
 
 

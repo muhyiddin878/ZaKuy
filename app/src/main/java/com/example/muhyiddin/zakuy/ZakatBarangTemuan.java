@@ -56,7 +56,7 @@ public class ZakatBarangTemuan extends AppCompatActivity {
 
 
                 if(TextUtils.isEmpty(jumlahkeuntungan.getText())){
-                    Toast.makeText(ZakatBarangTemuan.this, "Data Harus Lengkap!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ZakatBarangTemuan.this, "Data must be complete!", Toast.LENGTH_SHORT).show();
                 }else{
                     double a= Integer.parseInt(jumlahkeuntungan.getText().toString());
 
@@ -86,9 +86,9 @@ public class ZakatBarangTemuan extends AppCompatActivity {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(ZakatBarangTemuan.this);
                 dialog.setCancelable(true);
                 dialog.setIcon(R.drawable.logo_icon);
-                dialog.setMessage("Tidak Ada Minimal, Karena Merupakan Barang Temuan");
+                dialog.setMessage("There is no minimum, because it is an item of discovery");
                 dialog.setTitle("Nishab: ");
-                dialog.setNegativeButton("TUTUP ", new DialogInterface.OnClickListener() {
+                dialog.setNegativeButton("CLOSE ", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.cancel();

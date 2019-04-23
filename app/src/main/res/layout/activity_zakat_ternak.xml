@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="Hitung Zakat Hewan Ternak"
+            android:text="Calculate Zakah on Livestock"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:text="Jenis Hewan"
+            android:text="Animal type"
             android:textColor="@color/green"
             android:textSize="14sp" />
 
@@ -56,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Jumlah Hewan"
+            android:hint="Number of animals"
             android:textColorHint="@color/green"
             app:hintAnimationEnabled="true"
             app:hintEnabled="true"
@@ -91,7 +91,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button2"
-        android:text="Mulai Hitung Zakat" />
+        android:text="Start Calculating Zakat" />
 
 
 
@@ -115,7 +115,7 @@
                 android:id="@+id/nilai"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Jumlah Zakat   : "
+                android:text="Amount of Zakat   : "
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"/>
@@ -130,7 +130,6 @@
                 android:text=""
                 android:textColor="@color/green"
                 android:textSize="14sp"
-                android:maxLength="12"
                 android:layout_toEndOf="@+id/nilai"
                 android:textStyle="bold"
 
@@ -155,5 +154,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button_4"
-        android:text="Lihat Nishab" />
+        android:text="Show Nishab" />
 </LinearLayout>
