@@ -73,17 +73,14 @@ public class ZakatProfesi extends AppCompatActivity {
                     Toast.makeText(ZakatProfesi.this, "Data Must be Complete!", Toast.LENGTH_SHORT).show();
                 }else{
                     double a = Double.parseDouble(pendapatan.getText().toString().replaceAll("[Rp,.]", ""));
-                    double b = Double.parseDouble(pendapatan.getText().toString().replaceAll("[Rp,.]", ""));
-                    double c = Double.parseDouble(pendapatan.getText().toString().replaceAll("[Rp,.]", ""));
-                    double gaji_bersih=a-c;
-
-
-
-                    double hnishab=653*c;
+                    double b = Double.parseDouble(hargaberas.getText().toString().replaceAll("[Rp,.]", ""));
+                    double c = Double.parseDouble(hutang.getText().toString().replaceAll("[Rp,.]", ""));
+                    double gaji_bersih = a-c;
+                    double hnishab=653*b;
                     nisab.setText(formatRupiah.format(hnishab));
 
 
-                    if(hnishab> gaji_bersih){
+                    if(hnishab > gaji_bersih){
 
                         nilai.setText("You are Not Obliged to Pay Zakat");
                     }
