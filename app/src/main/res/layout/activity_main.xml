@@ -10,6 +10,9 @@
     tools:context=".MainActivity">
 
 
+
+
+
     <com.synnapps.carouselview.CarouselView
         android:id="@+id/carouselView"
         android:layout_width="match_parent"
@@ -165,6 +168,12 @@
 
 
     </RelativeLayout>
+    <android.support.v7.widget.Toolbar
+        app:titleTextColor="@android:color/black"
+        android:id="@+id/tentang"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+    </android.support.v7.widget.Toolbar>
 
 
 

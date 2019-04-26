@@ -8,9 +8,13 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -27,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CardView card4;
     CardView card5;
     CardView card6;
+    Toolbar tentang;
     boolean doubleBackToExitPressedOnce = false;
 
     int[] sampleImages = {R.drawable.carousel1, R.drawable.carousel2, R.drawable.carousel3,R.drawable.carousel4,R.drawable.carousel5};
@@ -53,12 +58,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         carouselView.setPageCount(sampleImages.length);
         carouselView.setImageListener(imagelistener);
 
-        card1= (CardView) findViewById(R.id.card_view);
-        card2= (CardView) findViewById(R.id.card_view2);
-        card3= (CardView) findViewById(R.id.card_view3);
+        card1= findViewById(R.id.card_view);
+        card2= findViewById(R.id.card_view2);
+        card3= findViewById(R.id.card_view3);
         card4= (CardView) findViewById(R.id.card_view4);
         card5= (CardView) findViewById(R.id.card_view5);
         card6= (CardView) findViewById(R.id.card_view6);
+        tentang= findViewById(R.id.tentang);
+        tentang.inflateMenu(R.menu.menu);
+        tentang.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                if(menuItem.getItemId()==R.id.tentangaplikasi){
+                    Intent intent = new Intent(MainActivity.this, TentangActivity.class);
+                    startActivity(intent);
+                    Toast.makeText
+                            (getApplicationContext(), "Tentang Aplikasi " , Toast.LENGTH_SHORT)
+                            .show();
+                }
+                return false;
+            }
+        });
+//        setSupportActionBar(tentang);
+
+
 
 
         card1.setOnClickListener(this);
@@ -75,6 +98,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             imageView.setImageResource(sampleImages[position]);
         }
     };
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
 
 
     @Override

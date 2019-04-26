@@ -27,7 +27,6 @@
         <activity
             android:name=".ZakatProfesi"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-
         <activity
             android:name=".ZakatPerdagangan"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
@@ -36,19 +35,17 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".ZakatBarangTemuan"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
         <activity
             android:name=".ZakatEmasPerak"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
         <activity
             android:name=".ZakatTernak"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity
+            android:name=".TentangActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
 
-        </activity>
     </application>
 
 </manifest>
