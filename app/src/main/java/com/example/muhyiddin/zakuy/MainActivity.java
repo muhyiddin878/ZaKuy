@@ -72,9 +72,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(menuItem.getItemId()==R.id.tentangaplikasi){
                     Intent intent = new Intent(MainActivity.this, TentangActivity.class);
                     startActivity(intent);
-                    Toast.makeText
-                            (getApplicationContext(), "Tentang Aplikasi " , Toast.LENGTH_SHORT)
-                            .show();
                 }
                 return false;
             }

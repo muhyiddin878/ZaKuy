@@ -202,8 +202,8 @@ public class ZakatTernak extends AppCompatActivity {
                 dialog.setCancelable(true);
                 dialog.setIcon(R.drawable.logo_icon);
                 dialog.setTitle("Nishab: ");
-                dialog.setMessage("If the Goat is at Least 40 Animals" +
-                        "If the Cow is at Least 30 Animals " +
+                dialog.setMessage("If the Goat is at Least 40 Animals. " +
+                        "If the Cow is at Least 30 Animals. " +
                         "If the Camel is at Least 5 Animals");
                 dialog.setNegativeButton("CLOSE ", new DialogInterface.OnClickListener() {
                     @Override

@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:fontFamily="serif-monospace"
-        android:text=" Version   : 1.0.0 \n Developer : Muhyiddin Ubaidillah \n Contact   :muhyiddin.ubaidillah-2016@fst.unair.ac.id"/>
+        android:fontFamily="serif"
+        android:text=" Version      : 1.0.0 \n Developer : Muhyiddin Ubaidillah \n Contact      :ubaidillah878@gmail.com"/>
 
 </RelativeLayout>
